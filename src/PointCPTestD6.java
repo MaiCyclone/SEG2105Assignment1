@@ -18,7 +18,7 @@ public class PointCPTestD6 {
 	// Class methods *****************************************************
 
 	/**
-	 * This method is responsible for the creation of the PointCP object. This
+	 * This method is responsible for thp e creation of the PointCP object. This
 	 * can be done in two ways; the first, by using the command line and running
 	 * the program using <code> java 
 	 * PointCPTest &lt;coordtype (c/p)&gt; &lt;X/RHO&gt; &lt;Y/THETA&gt;
@@ -34,7 +34,7 @@ public class PointCPTestD6 {
 	 *            The value of Y or THETA.
 	 */
 	public static void main(String[] args) {
-		PointCP point;
+		PointCPD6 point;
 
 		System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
@@ -42,7 +42,7 @@ public class PointCPTestD6 {
 		// If he did, create the PointCP object from these arguments.
 		// If he did not, prompt the user for them.
 		try {
-			point = new PointCP(args[0].toUpperCase().charAt(0), Double.valueOf(args[1]).doubleValue(),
+			point = new PointCPD6(args[0].toUpperCase().charAt(0), Double.valueOf(args[1]).doubleValue(),
 					Double.valueOf(args[2]).doubleValue());
 		} catch (Exception e) {
 			// If we arrive here, it is because either there were no
@@ -72,7 +72,7 @@ public class PointCPTestD6 {
 	 * @throws IOException
 	 *             If there is an error getting input from the user.
 	 */
-	private static PointCP getInput() throws IOException {
+	private static PointCPD6 getInput() throws IOException {
 		byte[] buffer = new byte[1024]; // Buffer to hold byte input
 		boolean isOK = false; // Flag set if input correct
 		String theInput = ""; // Input information
@@ -136,6 +136,6 @@ public class PointCPTestD6 {
 			isOK = false;
 		}
 		// Return a new PointCP object
-		return (new PointCP(coordType, a, b));
+		return (new PointCPD6(coordType, a, b));
 	}
 }
